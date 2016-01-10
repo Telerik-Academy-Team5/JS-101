@@ -1,0 +1,7 @@
+.home-image-bg {
+  background: url("../img/home-bg.jpg") no-repeat;
+}
+
+.transperant{
+  background-color: rgba(0,0,0,0) !important;
+}
