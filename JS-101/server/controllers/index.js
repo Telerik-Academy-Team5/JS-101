@@ -1,5 +1,7 @@
-var UsersController = require('./UsersController');
+var UsersController = require('./users-controller'),
+  ZenController = require('./zen-controller');
 
 module.exports = {
-    users: UsersController
+  users: UsersController,
+  jsexecutor: ZenController
 };

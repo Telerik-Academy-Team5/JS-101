@@ -1,0 +1,16 @@
+extends ../shared/layout
+block main-content
+    .panel.panel-primary
+      .panel-heading
+        h3.panel-title Zen IDE
+      .panel-body
+      form(method="post")
+          input(id="code" class="form-control" type="text" name="code" placeholder="Your Code Here")
+          br
+          input(type="submit" class="btn btn-lg" value="Run")
+      .panel.panel-primary
+        .panel-heading
+          h3.panel-title Output
+        .panel-body
+          if(result)
+            span #{result.output}

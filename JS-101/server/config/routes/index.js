@@ -15,5 +15,6 @@
     });
 
     require('./account')(app);
+    require('./jsexecutor')(app);
   }
 }());
