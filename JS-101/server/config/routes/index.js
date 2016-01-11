@@ -16,5 +16,6 @@
 
     require('./account')(app);
     require('./jsexecutor')(app);
+    require('./admin')(app);
   }
 }());

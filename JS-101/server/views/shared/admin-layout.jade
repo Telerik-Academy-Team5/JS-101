@@ -1,0 +1,181 @@
+doctype
+html
+    head
+        title Admin Panel
+
+        link(rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+        link(rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")
+        link(rel="stylesheet" href="/css/admin-panel/AdminLTE.min.css")
+        link(rel="stylesheet" href="/css/admin-panel/skins/_all-skins.min.css")
+
+    body.hold-transition.skin-blue.sidebar-mini
+        .wrapper
+          header.main-header
+              a(href="/admin").logo
+                  span.logo-mini A
+                  span.logo-lg Admin
+              nav.navbar.navbar-static-top(role='navigation')
+                  // Sidebar toggle button
+                  a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+                    span.sr-only Toggle navigation
+                  .navbar-custom-menu
+                    ul.nav.navbar-nav
+                      // Messages: style can be found in dropdown.less
+                      li.dropdown.messages-menu
+                        a.dropdown-toggle(href='#', data-toggle='dropdown')
+                          i.fa.fa-envelope-o
+                          span.label.label-success 4
+                        ul.dropdown-menu
+                          li.header You have 4 messages
+                          li
+                            // inner menu: contains the actual data
+                            ul.menu
+                              li
+                                // start message
+                                a(href='#')
+                                  .pull-left
+                                    img.img-circle(src='/img/home-bg.jpg', alt='User Image')
+                                  h4
+                                    | Support Team
+                                    small
+                                      i.fa.fa-clock-o
+                                      |  5 mins
+                                  p Why not buy a new awesome theme?
+                              // end message
+                              li
+                                a(href='#')
+                                  .pull-left
+                                    img.img-circle(src='/img/home-bg.jpg', alt='User Image')
+                                  h4
+                                    | AdminLTE Design Team
+                                    small
+                                      i.fa.fa-clock-o
+                                      |  2 hours
+                                  p Why not buy a new awesome theme?
+
+                          li.footer
+                            a(href='#') See All Messages
+                      li.dropdown.notification-menu
+                          a.dropdown-toggle(href='#', data-toggle='dropdown')
+                            i.fa.fa-bell-o
+                            span.label.label-warning 10
+                          ul.dropdown-menu
+                              li.header You have 1- notifications
+                              li
+                                  ul.menu
+                                      li
+                                          a(href="#")
+                                              i.fa.fa-users.text-aqua 5 new members joined today. Or notify from 3th party
+                               li.footer
+                                    a(href="#") View All
+                      li.dropdown.user.user-menu
+                            a.dropdown-toggle(href='#', data-toggle='dropdown')
+                              img.user-image(src='/img/home-bg.jpg', alt='User Image')
+                              span.hidden-xs Alexander Pierce
+                            ul.dropdown-menu
+                              // User image
+                              li.user-header
+                                img.img-circle(src='/img/home-bg.jpg', alt='User Image')
+                                p
+                                  | Alexander Pierce - Web Developer
+                                  small Member since Nov. 2012
+                                     // Menu Footer
+                              li.user-footer
+                                .pull-left
+                                  a.btn.btn-default.btn-flat(href='#') Profile
+                                .pull-right
+                                  a.btn.btn-default.btn-flat(href='#') Sign out
+
+
+          aside.main-sidebar
+            // sidebar: style can be found in sidebar.less
+            section.sidebar
+              // Sidebar user panel
+              .user-panel
+                .pull-left.image
+                  img.img-circle(src='/img/home-bg.jpg', alt='User Image')
+                .pull-left.info
+                  p Alexander Pierce
+                  a(href='#')
+                    i.fa.fa-circle.text-success
+                    |  Online
+
+              ul.sidebar-menu
+                  li.header MAIN NAVIGATION
+                  li.active.treeview
+                    a(href='#')
+                      i.fa.fa-dashboard
+                      span Dashboard
+                      i.fa.fa-angle-left.pull-right
+                    ul.treeview-menu
+                      li.active
+                        a(href='articles')
+                          i.fa.fa-circle-o
+                          |  Articles
+                      li
+                        a(href='events')
+                          i.fa.fa-circle-o
+                          |  Events
+                      li
+                        a(href='/books')
+                          i.fa.fa-circle-o
+                          |  Books
+
+
+                    li.treeview
+                      a(href='#')
+                        i.fa.fa-dashboard
+                        span Articles
+                        i.fa.fa-angle-left.pull-right
+                      ul.treeview-menu
+                        li.active
+                          a(href='articles')
+                            i.fa.fa-circle-o
+                            |  Add new
+                        li
+                          a(href='events')
+                            i.fa.fa-circle-o
+                            |  Statistics
+                    li.treeview
+                      a(href='#')
+                        i.fa.fa-dashboard
+                        span Events
+                        i.fa.fa-angle-left.pull-right
+                      ul.treeview-menu
+                        li.active
+                          a(href='articles')
+                            i.fa.fa-circle-o
+                            |  Add new
+                        li
+                          a(href='events')
+                            i.fa.fa-circle-o
+                            |  Calendar
+
+
+                  li.treeview
+                    a(href='#')
+                      i.fa.fa-files-o
+                      span Layout Options
+                      span.label.label-primary.pull-right 4
+                    ul.treeview-menu
+                      li
+                        a(href='pages/layout/top-nav.html')
+                          i.fa.fa-circle-o
+                          |  Top Navigation
+                      li
+                        a(href='pages/layout/boxed.html')
+                          i.fa.fa-circle-o
+                          |  Boxed
+                      li
+                        a(href='pages/layout/fixed.html')
+                          i.fa.fa-circle-o
+                          |  Fixed
+                      li
+                        a(href='pages/layout/collapsed-sidebar.html')
+                          i.fa.fa-circle-o
+                          |  Collapsed Sidebar
+
+     .content-wrapper
+       block admin-content
+     include admin-scripts

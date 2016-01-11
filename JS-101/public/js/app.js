@@ -8,4 +8,5 @@
     .constant('baseServiceUrl', 'http://localhost:8080');
 
   $.material.init();
+
 }());
