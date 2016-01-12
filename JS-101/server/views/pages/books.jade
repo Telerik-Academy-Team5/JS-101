@@ -9,9 +9,14 @@ block main-content
                             th= title
                     tbody
                         each book in books
-                        tr
-                            each prop in book
-                                td= prop
+                            tr
+                                td= book.title
+                                td= book.description
+                                td= book.authors
+                                td= book.difficultLevel
+                                td= book.pages
+                                td= book.publishDate
+
 
 
 
