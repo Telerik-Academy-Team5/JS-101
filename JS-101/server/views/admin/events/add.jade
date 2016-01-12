@@ -1,0 +1,44 @@
+extends ../../shared/admin-layout
+
+block admin-content
+	.container(ng-controller='EventsController as vm')
+		div(class='well col-md-8 col-md-offset-2')
+			form(class='form-horizontal' name='addProduct')
+				fieldset
+					legend
+						| Add product
+
+					.form-group
+						label(class='col-md-2 control-label', for='topic')
+							| Topic
+						.col-md-10
+							input(type='text', class='form-control', placeholder='Topic', id='topic', ng-model='event.topic' ng-required='true')
+					.form-group
+						label(class='col-md-2 control-label', for='description')
+							| Description
+						.col-md-10
+							textarea(class='form-control', rows='3', id='description', ng-model='event.description' ng-required='true')
+					.form-group
+						label(class='col-md-2 control-label', for='speakers')
+							| Speakers
+						.col-md-10
+							input(type='text', class='form-control', placeholder='Image', id='speakers', ng-model='event.speakers')
+					.form-group
+						label(class='col-md-2 control-label', for='location')
+							| location
+						.col-md-10
+							input(type='text', class='form-control', placeholder='Location', id='location', ng-model='event.location')
+					.form-group
+						label(class='col-md-2 control-label', for='url')
+							| More Information
+						.col-md-10
+							input(type='text', class='form-control', placeholder='More info(url)', id='url', ng-model='event.url')
+					.form-group
+						label(class='col-md-2 control-label', for='date')
+							| Date&Time
+						.col-md-10
+							input(class='form-control',  id='date', ng-model='event.date' kendo-date-time-picker)
+					.form-group
+						div(class='col-md-10 col-md-offset-2')
+							button(class='btn btn-primary', type='reset') Cancel
+							button(class='btn btn-primary', ng-click='vm.createEvent(event)' ng-disabled="addEvent.$invalid") Submit

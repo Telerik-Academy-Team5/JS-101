@@ -9,7 +9,7 @@ html
         link(rel="stylesheet" href="/css/site.css")
         link(rel="stylesheet" href="/lib/bootstrap-material-design/dist/css/bootstrap-material-design.css")
         link(rel="stylesheet" href="/lib/bootstrap-material-design/dist/css/ripples.min.css")
-    body
+    body(ng-app="myApp")
         header.navbar.navbar-default
             .container-fluid
                 .navbar-header
@@ -32,7 +32,7 @@ html
 
                     ul.nav.navbar-nav.navbar-right
                         li
-                            a(href="/admin") Admin
+                            a(href="/admin/panel") Admin
                         if(currentUser)
                             li
                                 a(href="/profile") Hello

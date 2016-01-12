@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 module.exports.init = function() {
   var eventSchema = mongoose.Schema({
-    title: {
+    topic: {
       type: String,
       require: '{PATH} is required'
     },

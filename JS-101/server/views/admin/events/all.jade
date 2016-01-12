@@ -1,0 +1,8 @@
+extends ../../shared/admin-layout
+
+block admin-content
+      h1 events[0].topic
+      h1 Events
+      each event in events
+        p= event.topic
+        p= event.date
