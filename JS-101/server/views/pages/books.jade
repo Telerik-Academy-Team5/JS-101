@@ -5,7 +5,7 @@ block main-content
             table.table.table-hover
                 thead
                     tr
-                        each title in titles
+                        each title in ['Title', 'Description', 'Authors', 'Difficult level', 'Pages', 'Pusblish date']
                             th= title
                     tbody
                         each book in books

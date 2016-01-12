@@ -2,12 +2,14 @@ var UsersController = require('./users-controller'),
     ZenController = require('./zen-controller'),
     AdminController = require('./admin-controller'),
     AboutController = require('./about-controller'),
-    ContactsController = require('./contacts-controller');
+    ContactsController = require('./contacts-controller'),
+    BooksController = require('./books-controller');
 
 module.exports = {
     users: UsersController,
     jsexecutor: ZenController,
     admin: AdminController,
     about: AboutController,
-    contacts: ContactsController
+    contacts: ContactsController,
+    books: BooksController
 };
