@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 module.exports.init = function() {
-  var userSchema = mongoose.Schema({
+  var eventSchema = mongoose.Schema({
     title: {
       type: String,
       require: '{PATH} is required'
@@ -22,10 +22,9 @@ module.exports.init = function() {
     date: {
       type: Date,
       default: Date.now,
-      require: '{PATH} is required',
-      unique: true
+      require: '{PATH} is required'
     }
   });
 
-  var Event = mongoose.model('Event', userSchema);
+  var Event = mongoose.model('Event', eventSchema);
 };

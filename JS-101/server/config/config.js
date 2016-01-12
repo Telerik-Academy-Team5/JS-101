@@ -5,6 +5,6 @@ module.exports = {
   development: {
     rootPath: rootPath,
     db: 'mongodb://localhost:27017/jsstepbystep',
-    port: process.env.PORT || 8080
+    port: process.env.PORT || 8888
   }
 };
