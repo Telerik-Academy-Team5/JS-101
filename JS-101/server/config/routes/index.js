@@ -17,5 +17,7 @@
     require('./account')(app);
     require('./jsexecutor')(app);
     require('./admin')(app);
+    require('./about')(app);
+    require('./contacts')(app);
   }
 }());

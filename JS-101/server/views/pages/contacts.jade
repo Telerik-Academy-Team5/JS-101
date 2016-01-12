@@ -1,0 +1,38 @@
+extends ../shared/layout
+block main-content
+    .row
+        .col-md-8.col-md-offset-2
+            form.form-horizontal(method="post")
+                fieldset
+                    legend.text-center.header Contact us
+                    .form-group
+                        span.col-md-1.col-md-offset-1.text-right
+                            .glyphicon.glyphicon-user
+                        .col-md-8
+                            input#fname.form-control(type="text", name="firstName", placeholder="First Name" required="true")
+                    .form-group
+                        span.col-md-1.col-md-offset-1.text-right
+                            .glyphicon.glyphicon-user
+                        .col-md-8
+                            input#lname.form-control(type="text", name="lastName", placeholder="Last Name" required="true")
+                    .form-group
+                        span.col-md-1.col-md-offset-1.text-right
+                            .glyphicon.glyphicon-envelope
+                        .col-md-8
+                            input#email.form-control(type="text", name="email", placeholder="Email Address" required="true")
+                    .form-group
+                        span.col-md-1.col-md-offset-1.text-right
+                            .glyphicon.glyphicon-phone-alt
+                        .col-md-8
+                            input#phone.form-control(type="text", name="phone", placeholder="Phone")
+                    .form-group
+                        span.col-md-1.col-md-offset-1.text-right
+                            .glyphicon.glyphicon-edit
+                        .col-md-8
+                            textarea#message.form-control(name="text", required="true" placeholder="Enter your massage for us here. We will get back to you within 2 business days.", rows="7")
+                    .form-group
+                        .col-md-12.text-center
+                            button.btn.btn-primary.btn-lg(type="submit") Submit
+
+
+

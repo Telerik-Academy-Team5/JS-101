@@ -1,22 +1,24 @@
 var mongoose = require('mongoose'),
-  UserModel = require('../data/models/User');
+    UserModel = require('../data/models/User'),
+    MessageModel = require('../data/models/Message');
 
-module.exports = function(config) {
-  mongoose.connect(config.db);
-  var db = mongoose.connection;
+module.exports = function (config) {
+    mongoose.connect(config.db);
+    var db = mongoose.connection;
 
-  db.once('open', function(err) {
-    if (err) {
-      console.log('Database could not be opened: ' + err);
-      return;
-    }
+    db.once('open', function (err) {
+        if (err) {
+            console.log('Database could not be opened: ' + err);
+            return;
+        }
 
-    console.log('Database feeling fine and running...')
-  });
+        console.log('Database feeling fine and running...')
+    });
 
-  db.on('error', function(err) {
-    console.log('Database error: ' + err);
-  });
+    db.on('error', function (err) {
+        console.log('Database error: ' + err);
+    });
 
-  UserModel.init();
+    UserModel.init();
+    MessageModel.init();
 };
