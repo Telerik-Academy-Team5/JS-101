@@ -11,41 +11,45 @@ html
         link(rel="stylesheet" href="/lib/bootstrap-material-design/dist/css/ripples.min.css")
     body
         header.navbar.navbar-default
-              .container-fluid
-                  .navbar-header
-                      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+            .container-fluid
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
-                      a.navbar-brand(href="/") JS 101
-                  .navbar-collapse.collapse.navbar-responsive-collapse
-                      ul.nav.navbar-nav
-                          li
-                              a(href="/")
-                                  i.material-icons home
-                          li
-                              a(href="/zen") IDE
+                    a.navbar-brand(href="/") JS 101
+                .navbar-collapse.collapse.navbar-responsive-collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href="/")
+                                i.material-icons home
+                        li
+                            a(href="/zen") IDE
+                        li
+                            a(href="/about") ABOUT US
+                        li
+                            a(href="/contacts") CONTACTS
 
-                      ul.nav.navbar-nav.navbar-right
-                          li
-                              a(href="/admin") Admin
-                          if(currentUser)
-                              li
-                                  a(href="/profile") Hello
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href="/admin") Admin
+                        if(currentUser)
+                            li
+                                a(href="/profile") Hello
                                     span#currentUsername #{currentUser.username}
-                              li
-                                  a(href="/logout") Logout
-                           else
-                              li
+                            li
+                                a(href="/logout") Logout
+                        else
+                            li
                                 a(href="/register") Register
                                     i.material-icons person_add
-                              li
+                            li
                                 a(href="/login") Login
 
         .container
-          if (errorMessage)
-            .alert.alert-dismissible.alert-danger
-                button.close(type='button', class='close' data-dismiss='alert') x
-                .text-center #{errorMessage}
+            if (errorMessage)
+                .alert.alert-dismissible.alert-danger
+                    button.close(type='button', class='close' data-dismiss='alert') x
+                    .text-center #{errorMessage}
         block main-content
         include scripts

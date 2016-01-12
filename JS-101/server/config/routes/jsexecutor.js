@@ -5,7 +5,7 @@
 
   router
     .get('/zen', controllers.jsexecutor.get)
-    .post('/zen', controllers.jsexecutor.submit)
+    .post('/zen', controllers.jsexecutor.submit);
 
   module.exports = function(app) {
     app.use('/', router);
