@@ -1,21 +1,57 @@
 extends ../shared/layout
 block main-content
     .row
-        .col-md-8.col-md-offset-2
-            table.table.table-hover
-                thead
-                    tr
-                        each title in ['Title', 'Description', 'Authors', 'Difficult level', 'Pages', 'Pusblish date']
-                            th= title
-                    tbody
-                        each book in books
-                            tr
-                                td= book.title
-                                td= book.description
-                                td= book.authors
-                                td= book.difficultLevel
-                                td= book.pages
-                                td= book.publishDate
+        div(class='row' ng-controller='ProductsController as vm')
+            .col-md-10.col-md-offset-1.jumbotron.text-center
+                h1 Books
+                .col-md-3
+                    .form-group
+                        label(class='col-md-3 control-label', for='sortby')
+                            | Sort by
+                        .col-md-9
+                            select(class='form-control', id='sortby', ng-model='vm.request.sortBy')
+                                option(value='name') Name
+                                option(value='difficultLevel') Difficult level
+                                option(value='pages') Pages
+                                option(value='publishDate') Publish date
+                .col-md-3
+                    .form-group
+                        label(class='col-md-2 control-label', for='type')
+                            | Type
+                        .col-md-10
+                            select(class='form-control', id='type', ng-model='vm.request.type')
+                                option(value='asc') Ascending
+                                option(value='desc') Descending
+                .col-md-2
+                    .form-group
+                        label(class='col-md-3 control-label', for='pageSize')
+                            | Page size
+                        .col-md-9
+                            input(type='number', class='form-control', id='pageSize', ng-model='vm.request.pageSize')
+                .col-md-2
+                    .form-group
+                        label(class='col-md-3 control-label', for='page')
+                            | Page
+                        .col-md-9
+                            input(type='number', class='form-control', id='page', ng-model='vm.request.page')
+                .col-md-2
+                    .form-group
+                        button(class='btn btn-primary btn-raised' ng-click='vm.filterProducts()') Filter
+                <br>
+                table.table.table-hover
+                    thead
+                        tr
+                            each title in ['Title', 'Description', 'Authors', 'Difficult level', 'Pages', 'Pusblish date']
+                                th= title
+                        tbody
+                            each book in books
+                                tr
+                                    td= book.title
+                                    td= book.description
+                                    td= book.authors
+                                    td= book.difficultLevel
+                                    td= book.pages
+                                    td= book.publishDate
 
 
 

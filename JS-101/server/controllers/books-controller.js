@@ -17,7 +17,7 @@ module.exports = {
             if(err){
                 console.log('Cannot load books: ' + err);
             }
-            
+
             res.render('pages/books', {books: result.docs});
         });
     }
