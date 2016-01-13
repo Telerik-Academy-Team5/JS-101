@@ -22,8 +22,6 @@ module.exports = {
             res.render('pages/books/books', {books: result.docs});
         });
     },
-
-    //
     addBook: function(req, res) {
         // TODO: Validation?
         console.log(req.body);
@@ -52,14 +50,14 @@ module.exports = {
                     listBooks.push(data.docs[book]);
                 }
             }
-            console.log(listBooks);
+
             res.render('pages/books/public', {
                 books: listBooks
             })
         })
     },
     form: function(req, res) {
-        res.render('pages/books/add');
+        res.render('pages/books/add-book');
     },
     allPublic: function(req, res) {
         // TODO: read query from user
@@ -67,18 +65,17 @@ module.exports = {
             page: 1,
             limit: 10
         }).then(function(data) {
-
-            var allBooks = [];
+            var listBooks = [];
 
             for (var book in data.docs) {
                 if (data.docs[book] && data.docs.hasOwnProperty(book)) {
-                    allBooks.push(data.docs[book]);
+                    listBooks.push(data.docs[book]);
                 }
             }
-            console.log(allBooks);
+            //console.log(listBooks);
             res.send({
-                data: books.slice(0, books.length - 1),
-                total: books.length
+                data: listBooks.slice(0, listBooks.length - 1),
+                total: listBooks.length
             });
         })
     },

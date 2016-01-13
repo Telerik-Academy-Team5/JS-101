@@ -7,6 +7,8 @@
 
     router
         .get(prefix, controllers.books.getBooks)
+        .post(prefix, controllers.books.addBook)
+        .get(prefix + '/add', controllers.books.form)
         .get(prefix + '/:id', controllers.books.findBookById);
 
     module.exports = function (app) {
