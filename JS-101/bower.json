@@ -19,7 +19,10 @@
     "angular": "~1.4.8",
     "bootstrap-material-design": "~0.5.7",
     "angular-kendo": "~1.0.3",
-    "kendo-ui-core": "~2014.2.903"
+    "kendo-ui-core": "~2014.2.903",
+    "angular-ui-calendar": "~1.0.1",
+    "fullcalendar": "~2.6.0",
+    "moment": "~2.11.1"
   },
   "resolutions": {
     "jquery": "~2.1.4",

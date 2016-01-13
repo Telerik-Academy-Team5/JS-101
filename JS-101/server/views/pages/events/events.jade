@@ -1,0 +1,9 @@
+extends ../../shared/layout
+
+block main-content
+
+    .container(ng-controller='EventsCalendarController as vm')
+        .callout.callout-success
+            h1 Events
+        .container
+            .calendar(ui-calendar="uiConfig.calendar", ng-model="eventSources")
