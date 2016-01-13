@@ -9,7 +9,10 @@ module.exports = {
       _id: id
     }, callback);
   },
-  getAll: function(callback) {
-    Event.find(callback);
+  getAll: function(temp, query) {
+    return Event.paginate({}, query).then(function(result) {
+      return result;
+    });
+    //  Event.find(callback);
   }
 }

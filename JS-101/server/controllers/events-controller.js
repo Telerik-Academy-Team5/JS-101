@@ -16,36 +16,48 @@ module.exports = {
     });
   },
   all: function(req, res) {
-    events.getAll((err, events) => {
-    if (err) {
-      res.status(404).json({
-        error: 'No events found'
-      });
-    }
-    console.log(events);
+    // TODO: read query from user
+    events.getAll({}, {
+      page: 1,
+      limit: 10
+    }).then(function(data) {
 
-    res.render('admin/events/all', {
-      events: events
-    });
+      var events = [];
+
+      for (var event in data.docs) {
+        if (data.docs[event] && data.docs.hasOwnProperty(event)) {
+          events.push(data.docs[event]);
+        }
+      }
+      console.log(events);
+      res.render('admin/events/all', {
+        events: events
+      })
     })
   },
   form: function(req, res) {
     res.render('admin/events/add');
   },
   allPublic: function(req, res) {
-    // TODO: mongoose pagination
-    events.getAll((err, events) => {
-    if (err) {
-      res.status(404).json({
-        error: 'No events found'
-      });
-    }
-    res.send({
-      data: events.slice(0, events.length - 1),
-      total: events.length
-    });
-    })
+    // TODO: read query from user
+    events.getAll({}, {
+      page: 1,
+      limit: 10
+    }).then(function(data) {
 
+      var events = [];
+
+      for (var event in data.docs) {
+        if (data.docs[event] && data.docs.hasOwnProperty(event)) {
+          events.push(data.docs[event]);
+        }
+      }
+      console.log(events);
+      res.send({
+        data: events.slice(0, events.length - 1),
+        total: events.length
+      });
+    })
   },
   byId: function(req, res) {
 
