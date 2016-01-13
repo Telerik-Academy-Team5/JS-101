@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+  mongoosePaginate = require('mongoose-paginate');
 
 module.exports.init = function() {
   var eventSchema = mongoose.Schema({
@@ -26,5 +27,6 @@ module.exports.init = function() {
     }
   });
 
+  eventSchema.plugin(mongoosePaginate);
   var Event = mongoose.model('Event', eventSchema);
 };
