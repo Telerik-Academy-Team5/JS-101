@@ -1,0 +1,48 @@
+extends ../../shared/layout
+
+block main-content
+    .container(ng-controller='BooksCreateController as vm')
+        .row
+            .col-md-10.col-md-offset-1
+                form.form-horizontal(name='addBook')
+                    fieldset
+                        legend.text-center.header Add book
+                        .form-group
+                            span.col-md-1.col-md-offset-1.text-right
+                                .glyphicon.glyphicon-book
+                            .col-md-8
+                                input#title.form-control(type="text", name="title", placeholder="Title", ng-model='book.title', ng-required="true")
+                        .form-group
+                            span.col-md-1.col-md-offset-1.text-right
+                                .glyphicon.glyphicon-user
+                            .col-md-8
+                                input#authors.form-control(type="text", name="authors", placeholder="Authors", ng-model='book.authors', ng-required="true")
+                        .form-group
+                            span.col-md-1.col-md-offset-1.text-right
+                                .glyphicon.glyphicon-edit
+                            .col-md-8
+                                textarea#description.form-control(name="description", placeholder="Description", ng-model='book.description' rows="7")
+                        .form-group
+                            span.col-md-1.col-md-offset-1.text-right
+                                .glyphicon.glyphicon-education
+                            .col-md-8
+                                select(class='form-control', id='difficultLevel', ng-init="book.difficultLevel='none'", ng-model='book.difficultLevel', name='difficultLevel')
+                                    option(value='none')
+                                    option(value='begin') A B C
+                                    option(value='medium') For beginners
+                                    option(value='advanced') For advanced
+                        .form-group
+                            span.col-md-1.col-md-offset-1.text-right
+                                .glyphicon.glyphicon-book
+                            .col-md-8
+                                input#pages.form-control(type="number", min="1", ng-model='book.pages', name="pages", placeholder="Pages" ng-required="true")
+                        .form-group
+                            span.col-md-1.col-md-offset-1.text-right
+                                .glyphicon.glyphicon-globe
+                            .col-md-8
+                                input(class='form-control',  id='date', ng-model='book.publishDate', k-ng-model='dateObject' kendo-date-picker)
+                        .form-group
+                            .col-md-12.text-center
+                                button(class='btn btn-primary btn-lg', type='reset') Cancel
+                                button(class='btn btn-primary btn-lg', type='submit' ng-click='vm.createBook(book)', ng-disabled='addBook.$invalid') Submit
+
