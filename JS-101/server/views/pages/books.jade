@@ -1,7 +1,7 @@
 extends ../shared/layout
 block main-content
     .row
-        div(class='row' ng-controller='ProductsController as vm')
+        div(class='row')
             .col-md-10.col-md-offset-1.jumbotron.text-center
                 h1 Books
                 .col-md-3
@@ -52,8 +52,3 @@ block main-content
                                     td= book.difficultLevel
                                     td= book.pages
                                     td= book.publishDate
-
-
-
-
-
