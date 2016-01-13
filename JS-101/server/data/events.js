@@ -14,5 +14,11 @@ module.exports = {
       return result;
     });
     //  Event.find(callback);
+  },
+  all: function(callback) {
+    Event.find({}, callback);
+  },
+  count: function(callback) {
+    Event.count({}, callback)
   }
 }

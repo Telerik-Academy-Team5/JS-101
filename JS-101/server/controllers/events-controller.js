@@ -29,7 +29,6 @@ module.exports = {
           events.push(data.docs[event]);
         }
       }
-      console.log(events);
       res.render('admin/events/all', {
         events: events
       })
@@ -39,24 +38,36 @@ module.exports = {
     res.render('admin/events/add');
   },
   allPublic: function(req, res) {
-    // TODO: read query from user
-    events.getAll({}, {
-      page: 1,
-      limit: 10
-    }).then(function(data) {
 
-      var events = [];
+    var sortBy = {},
+      query = {
+        page: req.body.page,
+        limit: req.body.take,
+        sort: req.body.sort
+      };
 
+    if (query.sort) {
+      query.sort = query.sort[0];
+      sortBy[query.sort.field] = query.sort.dir;
+      query.sort = sortBy;
+    }
+
+    events.getAll({}, query).then(function(data) {
+      var result = [];
       for (var event in data.docs) {
         if (data.docs[event] && data.docs.hasOwnProperty(event)) {
-          events.push(data.docs[event]);
+          result.push(data.docs[event]);
         }
       }
-      console.log(events);
+
+      events.count((err,count) => {
+
       res.send({
-        data: events.slice(0, events.length - 1),
-        total: events.length
+        data: result,
+        total: count
       });
+      })
+
     })
   },
   byId: function(req, res) {
