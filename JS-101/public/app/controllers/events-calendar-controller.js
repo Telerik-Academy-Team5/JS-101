@@ -20,9 +20,16 @@
               right: 'today prev,next'
             },
             events: data,
-            // dayClick: $scope.alertEventOnClick,
+            eventClick: function(date, jsEvent, view) {
+              $('#eventInfo #title').text(date.title);
+              $('#eventInfo #speakers').text(date.speakers);
+              $('#eventInfo #location').text(date.location);
+              $('#eventInfo').show();
+
+            },
           }
         };
+        $scope.count = data.length;
 
       })
   }

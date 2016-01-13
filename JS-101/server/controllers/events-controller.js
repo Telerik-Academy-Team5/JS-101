@@ -29,6 +29,8 @@ module.exports = {
           title: event.topic,
           start: event.date,
           end: event.end,
+          speakers: event.speakers,
+          location: event.location,
           backgroundColor: "#f56954", //red
           borderColor: "#f56954" //red
         }
