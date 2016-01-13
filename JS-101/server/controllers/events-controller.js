@@ -24,11 +24,11 @@ module.exports = {
     for (var event in data) {
       if (data[event] && data.hasOwnProperty(event)) {
         event = data[event];
-        console.log(event.date.toString());
+        console.log(event.end.toString());
         var calendarEvent = {
           title: event.topic,
           start: event.date,
-          end: event.date,
+          end: event.end,
           backgroundColor: "#f56954", //red
           borderColor: "#f56954" //red
         }

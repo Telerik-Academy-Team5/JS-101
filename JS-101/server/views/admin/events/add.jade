@@ -39,6 +39,12 @@ block admin-content
 						.col-md-10
 							input(class='form-control',  id='date', ng-model='event.date' kendo-date-time-picker)
 					.form-group
+						label(class='col-md-2 control-label', for='end')
+							| Date&Time
+						.col-md-10
+							input(class='form-control',  id='end', ng-model='event.end' kendo-date-time-picker)
+
+					.form-group
 						div(class='col-md-10 col-md-offset-2')
 							button(class='btn btn-primary', type='reset') Cancel
 							button(class='btn btn-primary', ng-click='vm.createEvent(event)' ng-disabled="addEvent.$invalid") Submit
