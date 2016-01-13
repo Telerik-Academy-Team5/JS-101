@@ -19,6 +19,7 @@
     require('./admin')(app);
     require('./about')(app);
     require('./contacts')(app);
+    require('./events')(app);
     require('./books')(app);
   }
 }());

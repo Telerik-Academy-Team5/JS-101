@@ -8,8 +8,10 @@ html
         link(rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")
         link(rel="stylesheet" href="/css/admin-panel/AdminLTE.min.css")
         link(rel="stylesheet" href="/css/admin-panel/skins/_all-skins.min.css")
+        link(rel='stylesheet', href='https://kendo.cdn.telerik.com/2015.3.1111/styles/kendo.common.min.css', type='text/css')
+        link(rel='stylesheet', href='https://kendo.cdn.telerik.com/2015.3.1111/styles/kendo.default.min.css', type='text/css')
 
-    body.hold-transition.skin-blue.sidebar-mini
+    body.hold-transition.skin-blue.sidebar-mini(ng-app="myApp")
         .wrapper
           header.main-header
               a(href="/admin").logo
@@ -114,7 +116,7 @@ html
                           i.fa.fa-circle-o
                           |  Articles
                       li
-                        a(href='events')
+                        a(href='/admin/events')
                           i.fa.fa-circle-o
                           |  Events
                       li
@@ -138,17 +140,17 @@ html
                             i.fa.fa-circle-o
                             |  Statistics
                     li.treeview
-                      a(href='#')
+                      a(href='/admin/events')
                         i.fa.fa-dashboard
                         span Events
                         i.fa.fa-angle-left.pull-right
                       ul.treeview-menu
                         li.active
-                          a(href='articles')
+                          a(href='/admin/events/add')
                             i.fa.fa-circle-o
                             |  Add new
                         li
-                          a(href='events')
+                          a(href='/admin/events')
                             i.fa.fa-circle-o
                             |  Calendar
 

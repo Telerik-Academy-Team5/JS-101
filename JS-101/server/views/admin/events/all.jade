@@ -1,0 +1,10 @@
+extends ../../shared/admin-layout
+
+block admin-content
+
+    .container(ng-controller='EventsController as vm')
+        .callout.callout-success
+            h1 Events
+        div
+            div(kendo-grid, k-options="mainGridOptions")
+            script(type="text/x-kendo-template", id="template")

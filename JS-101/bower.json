@@ -14,10 +14,11 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.6",
     "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
     "angular": "~1.4.8",
-    "bootstrap-material-design": "~0.5.7",
-    "bootstrap3-wysihtml5-bower": "~0.3.3"
+    "bootstrap-material-design": "~0.5.7"
+    "angular-kendo": "~1.0.3",
+    "kendo-ui-core": "~2014.2.903"
   }
 }

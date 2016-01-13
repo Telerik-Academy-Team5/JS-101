@@ -1,4 +1,4 @@
-var Event = require('mongoose').Model('Event');
+var Event = require('mongoose').model('Event');
 
 module.exports = {
   create: function(event, callback) {
@@ -8,5 +8,8 @@ module.exports = {
     Event.findOne({
       _id: id
     }, callback);
+  },
+  getAll: function(callback) {
+    Event.find(callback);
   }
 }
