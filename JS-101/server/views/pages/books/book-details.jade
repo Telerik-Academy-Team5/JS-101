@@ -1,0 +1,30 @@
+extends ../../shared/layout
+
+block main-content
+    .row
+        .col-md-8.col-md-offset-2.jumbotron.text-center
+            h1= book.title
+    .row
+        .col-md-6.col-md-offset-3
+            h3 Authors:
+            h4= book.authors
+    if book.description
+        .row
+            .col-md-6.col-md-offset-3
+                h3 Description:
+                h4= book.description
+    if book.difficultLevel
+        .row
+            .col-md-6.col-md-offset-3
+                h3 Difficult level:
+                h4= book.difficultLevel
+    if book.pages
+        .row
+            .col-md-6.col-md-offset-3
+                h3 Pages:
+                h4= book.pages
+    if book.publishDate
+        .row
+            .col-md-6.col-md-offset-3
+                h3 Publish Date:
+                h4= book.publishDate

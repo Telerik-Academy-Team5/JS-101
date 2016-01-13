@@ -1,4 +1,4 @@
-extends ../shared/layout
+extends ../../shared/layout
 block main-content
     .row
         div(class='row')
@@ -11,8 +11,6 @@ block main-content
                         .col-md-9
                             select(class='form-control', id='sortby', ng-model='vm.request.sortBy')
                                 option(value='name') Name
-                                option(value='difficultLevel') Difficult level
-                                option(value='pages') Pages
                                 option(value='publishDate') Publish date
                 .col-md-3
                     .form-group
@@ -36,19 +34,17 @@ block main-content
                             input(type='number', class='form-control', id='page', ng-model='vm.request.page')
                 .col-md-2
                     .form-group
-                        button(class='btn btn-primary btn-raised' ng-click='vm.filterProducts()') Filter
+                        button(class='btn btn-primary btn-raised') Filter
                 <br>
                 table.table.table-hover
                     thead
                         tr
-                            each title in ['Title', 'Description', 'Authors', 'Difficult level', 'Pages', 'Pusblish date']
-                                th= title
+                            each title in ['Title', 'Authors', 'Pages', 'Publish date']
+                                th.text-center= title
                         tbody
                             each book in books
                                 tr
                                     td= book.title
-                                    td= book.description
                                     td= book.authors
-                                    td= book.difficultLevel
                                     td= book.pages
                                     td= book.publishDate
