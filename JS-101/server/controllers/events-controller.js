@@ -23,6 +23,7 @@ module.exports = {
       });
     }
     console.log(events);
+
     res.render('admin/events/all', {
       events: events
     });
@@ -32,13 +33,23 @@ module.exports = {
     res.render('admin/events/add');
   },
   allPublic: function(req, res) {
-    throw {
-      pesho: 'gosho'
+    // TODO: mongoose pagination
+    events.getAll((err, events) => {
+    if (err) {
+      res.status(404).json({
+        error: 'No events found'
+      });
     }
+    res.send({
+      data: events.slice(0, events.length - 1),
+      total: events.length
+    });
+    })
+
   },
   byId: function(req, res) {
-    console.log(req.url);
-    events.findById('5695823d503f5500231db67b', (err, event) =>{
+
+    events.findById(req.params.id, (err, event) =>{
     if (err) {
       res.status(500).json({
         error: 'We have some problems.. Please Try again. Yes we will extract the messages in contsants :D'

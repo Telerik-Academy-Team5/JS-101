@@ -1,8 +1,10 @@
 extends ../../shared/admin-layout
 
 block admin-content
-      h1 events[0].topic
-      h1 Events
-      each event in events
-        p= event.topic
-        p= event.date
+
+    .container(ng-controller='EventsController as vm')
+        .callout.callout-success
+            h1 Events
+        div
+            div(kendo-grid, k-options="mainGridOptions")
+            script(type="text/x-kendo-template", id="template")

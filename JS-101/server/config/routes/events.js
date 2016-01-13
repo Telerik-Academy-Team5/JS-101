@@ -4,7 +4,7 @@
     controllers = require('../../controllers');
 
   router
-    .get('/events', controllers.events.allPublic)
+    .post('/events/all', controllers.events.allPublic)
     .post('/events', controllers.events.add)
 
   module.exports = function(app) {
