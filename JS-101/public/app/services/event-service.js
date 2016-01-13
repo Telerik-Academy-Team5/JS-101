@@ -9,8 +9,14 @@
         event: event
       });
     }
+
+    function getAll() {
+      return data.get(EVENTS_URL + '/calendar');
+    }
+
     return {
-      create: create
+      create: create,
+      getAll: getAll
     }
   }
 

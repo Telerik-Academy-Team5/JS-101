@@ -1,0 +1,38 @@
+extends ../../shared/layout
+
+block main-content
+
+    .container(ng-controller='EventsCalendarController as vm')
+        .callout.callout-success
+            h1 Events
+        .row
+            .col-md-3.col-sm-6.col-xs-12
+                .info-box-custom.bg-yellow
+                  span.info-box-custom-icon
+                    i.fa.fa-calendar
+                  .info-box-custom-content
+                    span.info-box-custom-text Events
+                    span.info-box-custom-number
+                      | {{count}}
+                    .progress
+                      .progress-bar(style='width: 70%')
+            .col-md-6.col-sm-6.col-xs-12
+                #eventInfo.bg-yellow.row.nav.navbar.navbar-nav(style='display:none')
+                    li.col-md-4
+                        i.material-icons bookmark
+                        #title
+                    li.divider
+                        i
+                    li.col-md-4
+                        i.material-icons person_add
+                        #speakers
+                    li.divider
+                        i
+                    li.col-md-3
+                        i.material-icons room
+                        #location
+
+        br
+        #eventInfo
+        .container
+            .calendar(ui-calendar="uiConfig.calendar")

@@ -4,6 +4,8 @@
     controllers = require('../../controllers');
 
   router
+    .get('/events', controllers.events.get)
+    .get('/events/calendar', controllers.events.calendar)
     .post('/events/all', controllers.events.allPublic)
     .post('/events', controllers.events.add)
 

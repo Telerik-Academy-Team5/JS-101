@@ -15,6 +15,32 @@ module.exports = {
     });
     });
   },
+  calendar: function(req, res) {
+    events.all((err, data)=>{
+    //  console.log(data);
+
+    var events = [];
+
+    for (var event in data) {
+      if (data[event] && data.hasOwnProperty(event)) {
+        event = data[event];
+        console.log(event.end.toString());
+        var calendarEvent = {
+          title: event.topic,
+          start: event.date,
+          end: event.end,
+          speakers: event.speakers,
+          location: event.location,
+          backgroundColor: "#f56954", //red
+          borderColor: "#f56954" //red
+        }
+        events.push(calendarEvent);
+      }
+    }
+
+    res.status(200).json(events);
+    })
+  },
   all: function(req, res) {
     // TODO: read query from user
     events.getAll({}, {
@@ -33,6 +59,9 @@ module.exports = {
         events: events
       })
     })
+  },
+  get: function(req, res) {
+    res.render('pages/events/events')
   },
   form: function(req, res) {
     res.render('admin/events/add');

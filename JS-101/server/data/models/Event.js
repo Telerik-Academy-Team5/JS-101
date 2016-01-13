@@ -24,6 +24,11 @@ module.exports.init = function() {
       type: Date,
       default: Date.now,
       require: '{PATH} is required'
+    },
+    end: {
+      type: Date,
+      default: Date.now,
+      require: '{PATH} is required'
     }
   });
 
