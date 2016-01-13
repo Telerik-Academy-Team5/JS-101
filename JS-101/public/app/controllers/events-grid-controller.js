@@ -1,6 +1,6 @@
 (function() {
 
-  function EventsController($scope, $location, eventService) {
+  function EventsGridController($scope, $location, eventService) {
     var vm = this;
     console.log('here');
     dataSource = new kendo.data.DataSource({
@@ -115,5 +115,5 @@
   }
 
   angular.module('myApp.controllers')
-    .controller('EventsController', ['$scope', '$location', 'eventService', EventsController])
+    .controller('EventsGridController', ['$scope', '$location', 'eventService', EventsGridController])
 }());
