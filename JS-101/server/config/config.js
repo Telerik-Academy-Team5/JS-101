@@ -4,7 +4,7 @@ var rootPath = path.normalize(__dirname + '/../../');
 module.exports = {
   development: {
     rootPath: rootPath,
-    db: 'mongodb://localhost:27017/jsstepbystep',
+    db: 'mongodb://pesho:pesho@ds043324.mongolab.com:43324/js101',
     port: process.env.PORT || 8888
   }
 };
