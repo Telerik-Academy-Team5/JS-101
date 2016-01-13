@@ -1,7 +1,7 @@
 extends ../shared/layout
 block main-content
     .row
-        div(class='row' ng-controller='ProductsController as vm')
+        div(class='row' ng-controller='BooksController as vm')
             .col-md-10.col-md-offset-1.jumbotron.text-center
                 h1 Books
                 .col-md-3
@@ -36,13 +36,13 @@ block main-content
                             input(type='number', class='form-control', id='page', ng-model='vm.request.page')
                 .col-md-2
                     .form-group
-                        button(class='btn btn-primary btn-raised' ng-click='vm.filterProducts()') Filter
+                        button(class='btn btn-primary btn-raised' ng-click='vm.filterBooks()') Filter
                 <br>
                 table.table.table-hover
                     thead
                         tr
-                            each title in ['Title', 'Description', 'Authors', 'Difficult level', 'Pages', 'Pusblish date']
-                                th= title
+                            each title in ['Title', 'Description', 'Authors', 'Difficult level', 'Pages', 'Publish date']
+                                th.text-center= title
                         tbody
                             each book in books
                                 tr
