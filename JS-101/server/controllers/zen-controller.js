@@ -13,11 +13,8 @@ module.exports = {
         child.stdin.write(req.body.code);
 
         child.stdout.on('data', function (result) {
-
-            res.render('pages/zen', {
-                result: {
-                    output: result
-                }
+            res.status(200).json({
+                output: result.toString()
             });
         });
 
