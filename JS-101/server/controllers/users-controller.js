@@ -9,7 +9,7 @@ module.exports = {
   },
   register: function(req, res, next) {
     var newUserData = req.body;
-
+console.dir(newUserData);
     if (newUserData.password != newUserData.confirmPassword) {
       req.session.error = 'Passwords do not match!';
       res.redirect('/register');
@@ -18,7 +18,10 @@ module.exports = {
       newUserData.hashPass = encryption.generateHashedPassword(newUserData.salt, newUserData.password);
       users.create(newUserData, function(err, user) {
         if (err) {
-          console.log('Failed to register new user: ' + err);
+          res.send({
+            success: false,
+            error: err
+          });
           return;
         }
 
@@ -26,10 +29,11 @@ module.exports = {
           if (err) {
             res.status(400);
             return res.send({
+              success: false,
               reason: err.toString()
             }); // TODO
           } else {
-            res.redirect('/');
+            res.send({success: true});
           }
         })
       });

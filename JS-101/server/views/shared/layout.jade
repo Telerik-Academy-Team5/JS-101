@@ -40,11 +40,11 @@ html
                             a(href="/contacts") CONTACTS
 
                     ul.nav.navbar-nav.navbar-right
-                        li
-                            a(href="/admin/panel") Admin
                         if(currentUser)
                             li
-                                a(href="/profile") Hello,
+                                a(href="/admin/panel") Admin
+                            li
+                                a(href="/profile") Hello,&nbsp;
                                     span#currentUsername #{currentUser.username}
                             li
                                 a(href="/logout") Logout
