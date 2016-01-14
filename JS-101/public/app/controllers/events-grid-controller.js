@@ -103,12 +103,12 @@
           title: "Date",
           width: "100px",
           template: "#= kendo.toString(kendo.parseDate(date, 'yyyy-MM-dd hh:mm'), 'MM/dd/yyyy hh:mm') #"
-        },
-        {
-          command: ["edit", "destroy"],
-          title: "//TODO ",
-          width: "120px"
-        }
+        }//,
+        //{
+        //  command: ["edit", "destroy"],
+        //  title: "//TODO ",
+        //  width: "120px"
+        //}
       ],
       editable: "popup"
     };

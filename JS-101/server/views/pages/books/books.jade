@@ -5,7 +5,8 @@ block main-content
             h1 Books
     .row.text-center
         .form-group
-            a(href="/books/add" class='btn btn-primary btn-raised') Add Book
+            if(currentUser)
+                a(href="/books/add" class='btn btn-primary btn-raised') Add Book
     .row.text-center
         .col-md-10.col-md-offset-1
 

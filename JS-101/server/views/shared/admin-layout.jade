@@ -74,13 +74,13 @@ html
                       li.dropdown.user.user-menu
                             a.dropdown-toggle(href='#', data-toggle='dropdown')
                               img.user-image(src='/img/home-bg.jpg', alt='User Image')
-                              span.hidden-xs Alexander Pierce
+                              span.hidden-xs #{currentUser.username}
                             ul.dropdown-menu
                               // User image
                               li.user-header
                                 img.img-circle(src='/img/home-bg.jpg', alt='User Image')
                                 p
-                                  | Alexander Pierce - Web Developer
+                                  | #{currentUser.username} - Web Developer
                                   small Member since Nov. 2012
                                      // Menu Footer
                               li.user-footer
@@ -98,7 +98,7 @@ html
                 .pull-left.image
                   img.img-circle(src='/img/home-bg.jpg', alt='User Image')
                 .pull-left.info
-                  p Alexander Pierce
+                  p #{currentUser.username}
                   a(href='#')
                     i.fa.fa-circle.text-success
                     |  Online
@@ -111,34 +111,34 @@ html
                       span Dashboard
                       i.fa.fa-angle-left.pull-right
                     ul.treeview-menu
-                      li.active
-                        a(href='articles')
-                          i.fa.fa-circle-o
-                          |  Articles
-                      li
-                        a(href='/admin/events')
-                          i.fa.fa-circle-o
-                          |  Events
-                      li
-                        a(href='/books')
-                          i.fa.fa-circle-o
-                          |  Books
+                      //li.active
+                      //  a(href='articles')
+                      //    i.fa.fa-circle-o
+                      //    |  Articles
+                     li
+                       a(href='/admin/events')
+                         i.fa.fa-circle-o
+                         |  Events
+                     li
+                       a(href='/books')
+                         i.fa.fa-circle-o
+                         |  Books
 
 
-                    li.treeview
-                      a(href='#')
-                        i.fa.fa-dashboard
-                        span Articles
-                        i.fa.fa-angle-left.pull-right
-                      ul.treeview-menu
-                        li.active
-                          a(href='articles')
-                            i.fa.fa-circle-o
-                            |  Add new
-                        li
-                          a(href='events')
-                            i.fa.fa-circle-o
-                            |  Statistics
+                    //li.treeview
+                    //  //a(href='#')
+                    //  //  i.fa.fa-dashboard
+                    //  //  span Articles
+                    //  //  i.fa.fa-angle-left.pull-right
+                    //  ul.treeview-menu
+                    //    li.active
+                    //      a(href='articles')
+                    //        i.fa.fa-circle-o
+                    //        |  Add new
+                    //    li
+                    //      a(href='events')
+                    //        i.fa.fa-circle-o
+                    //        |  Statistics
                     li.treeview
                       a(href='/admin/events')
                         i.fa.fa-dashboard
@@ -155,28 +155,28 @@ html
                             |  Calendar
 
 
-                  li.treeview
-                    a(href='#')
-                      i.fa.fa-files-o
-                      span Layout Options
-                      span.label.label-primary.pull-right 4
-                    ul.treeview-menu
-                      li
-                        a(href='pages/layout/top-nav.html')
-                          i.fa.fa-circle-o
-                          |  Top Navigation
-                      li
-                        a(href='pages/layout/boxed.html')
-                          i.fa.fa-circle-o
-                          |  Boxed
-                      li
-                        a(href='pages/layout/fixed.html')
-                          i.fa.fa-circle-o
-                          |  Fixed
-                      li
-                        a(href='pages/layout/collapsed-sidebar.html')
-                          i.fa.fa-circle-o
-                          |  Collapsed Sidebar
+                  //li.treeview
+                  //  a(href='#')
+                  //    i.fa.fa-files-o
+                  //    span Layout Options
+                  //    span.label.label-primary.pull-right 4
+                  //  ul.treeview-menu
+                  //    li
+                  //      a(href='pages/layout/top-nav.html')
+                  //        i.fa.fa-circle-o
+                  //        |  Top Navigation
+                  //    li
+                  //      a(href='pages/layout/boxed.html')
+                  //        i.fa.fa-circle-o
+                  //        |  Boxed
+                  //    li
+                  //      a(href='pages/layout/fixed.html')
+                  //        i.fa.fa-circle-o
+                  //        |  Fixed
+                  //    li
+                  //      a(href='pages/layout/collapsed-sidebar.html')
+                  //        i.fa.fa-circle-o
+                  //        |  Collapsed Sidebar
 
      .content-wrapper
        block admin-content

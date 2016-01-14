@@ -30,10 +30,13 @@ html
                         li
                             a(href="/")
                                 i.material-icons home
-                        li
-                            a(href="/zen") IDE
+                        if(currentUser)
+                            li
+                                a(href="/zen") IDE
                         li
                             a(href="/books") BOOKS
+                        li
+                            a(href="/events") EVENTS
                         li
                             a(href="/about") ABOUT US
                         li
