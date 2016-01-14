@@ -48,12 +48,12 @@
 
     function getErrorMessage(response) {
       // TODO: debug and fix
-      var error = response.data.modelState;
-      if (error && error[Object.keys(error)[0]][0]) {
-        error = error[Object.keys(error)[0]][0];
-      } else {
-        error = response.data;
-      }
+      var error = response.statusText;
+      //if (error && error[Object.keys(error)[0]][0]) {
+      //  error = error[Object.keys(error)[0]][0];
+      //} else {
+      //  error = response.data;
+      //}
 
       return error;
     }

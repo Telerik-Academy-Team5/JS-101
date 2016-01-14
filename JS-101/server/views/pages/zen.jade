@@ -6,7 +6,7 @@ block main-content
                 h3.panel-title Zen IDE
             .panel-body
             form(ng-submit='vm.submit(vm.code)')
-                input(id="code" class="form-control" type="text" name="code" placeholder="Your Code Here" ng-model='vm.code')
+                textarea(id="code" class="form-control" type="text" name="code" rows="7" placeholder="Your Code Here" ng-model='vm.code')
                 br
                 input(type="submit" class="btn btn-lg" value="Run")
             .panel.panel-primary
